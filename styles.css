@@ -6,7 +6,7 @@ body {
     text-align: center;
     margin: 0;
     padding: 0;
-    overflow: hidden; /* Remove barra de rolagem padrão */
+    overflow: hidden; /* Impede rolagem horizontal */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -17,7 +17,7 @@ body {
 
 /* Wrapper do conteúdo para rolagem interna */
 .content-wrapper {
-    overflow-y: auto; /* Ativa rolagem personalizada */
+    overflow-y: auto; /* Ativa rolagem vertical */
     max-height: 100vh; /* Restringe altura ao tamanho da tela */
     width: 100%; /* Largura total */
     display: flex;
@@ -34,7 +34,7 @@ body {
 .container {
     padding: 50px;
     margin: 20px auto;
-    background: rgba(255, 255, 255, 0.5);
+    background: rgba(255, 255, 255, 0.438);
     border-radius: 15px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
     display: flex;
@@ -43,8 +43,8 @@ body {
     align-items: center;
     width: 80%;
     animation: fadeInUp 1.5s ease forwards;
-    animation-delay: 0s; /* Aparece imediatamente */
     opacity: 0;
+    box-sizing: border-box;
 }
 
 /* Título "Nosso Amor" */
@@ -75,7 +75,7 @@ h1 {
 
 /* Painel do Contador */
 #counter-panel {
-    background: rgba(126, 126, 126, 0.418);
+    background: rgba(255, 255, 255, 0.212); /* Fundo mais visível */
     border-radius: 20px;
     padding: 30px 50px;
     display: inline-block;
@@ -112,92 +112,6 @@ h1 {
     animation: fadeInUp 1.5s ease forwards;
     animation-delay: 5.5s; /* Aparece após 5.5s */
     opacity: 0;
-}
-
-/* Ajustes para dispositivos móveis */
-@media (max-width: 768px) {
-    .container {
-        width: 90%;
-        padding: 30px;
-    }
-
-    h1 {
-        font-size: 2.5rem;
-    }
-
-    .carinhoso-texto {
-        font-size: 1.2rem;
-        line-height: 1.4;
-    }
-
-    #counter-panel {
-        padding: 20px 30px;
-    }
-
-    #together-text, #counter span {
-        font-size: 1.6rem;
-    }
-}
-
-/* Animações */
-@keyframes fadeInUp {
-    0% {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-/* Estilos Globais */
-body {
-    background: #000; /* Fundo preto sólido */
-    color: #fff;
-    font-family: 'Arial', sans-serif;
-    text-align: center;
-    margin: 0;
-    padding: 0;
-    overflow-x: hidden; /* Impede rolagem horizontal */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh; /* Altura total da tela */
-    width: 100vw; /* Largura total da tela */
-    box-sizing: border-box;
-}
-
-/* Wrapper do conteúdo para rolagem interna */
-.content-wrapper {
-    overflow-y: auto; /* Ativa rolagem vertical */
-    max-height: 100vh; /* Restringe altura ao tamanho da tela */
-    width: 100%; /* Largura total */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    scrollbar-width: none; /* Remove barra no Firefox */
-}
-
-.content-wrapper::-webkit-scrollbar {
-    display: none; /* Remove barra no Chrome e Safari */
-}
-
-/* Contêiner Principal */
-.container {
-    padding: 50px;
-    margin: 20px auto;
-    background: rgba(255, 255, 255, 0.5);
-    border-radius: 15px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 80%;
-    animation: fadeInUp 1.5s ease forwards;
-    animation-delay: 0s; /* Aparece imediatamente */
-    opacity: 0;
-    box-sizing: border-box; /* Previne overflow */
 }
 
 /* Ajustes para dispositivos móveis */
