@@ -3,15 +3,35 @@ body {
     background: #000; /* Fundo preto sólido */
     color: #fff;
     font-family: 'Arial', sans-serif;
-    text-align: center;
     margin: 0;
     padding: 0;
+    overflow: hidden; /* Remove a barra de rolagem padrão */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Ocupa toda a altura da tela */
+    width: 100vw; /* Ocupa toda a largura da tela */
+}
+
+/* Wrapper para o conteúdo */
+.content-wrapper {
+    overflow-y: auto; /* Ativa rolagem personalizada */
+    max-height: 100vh; /* Restringe altura ao tamanho da tela */
+    width: 100%; /* Largura total */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    scrollbar-width: none; /* Remove barra no Firefox */
+}
+
+.content-wrapper::-webkit-scrollbar {
+    display: none; /* Remove barra no Chrome e Safari */
 }
 
 /* Contêiner Principal */
 .container {
     padding: 50px;
-    margin-top: 20vh;
+    margin: 20px auto;
     background: rgba(255, 255, 255, 0.5);
     border-radius: 15px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
@@ -20,7 +40,6 @@ body {
     justify-content: center;
     align-items: center;
     width: 80%;
-    margin: 20px auto;
 }
 
 /* Título "Nosso Amor" */
@@ -35,7 +54,6 @@ h1 {
     text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.4);
     opacity: 0;
     animation: fadeInUp 1.5s ease forwards;
-    animation-delay: 0s; /* Aparece imediatamente */
 }
 
 /* Texto Carinhoso */
@@ -46,7 +64,7 @@ h1 {
     text-align: center;
     opacity: 0;
     animation: fadeInUp 1.5s ease forwards;
-    animation-delay: 2s; /* Aparece após 2s */
+    animation-delay: 2s;
 }
 
 /* Painel do Contador */
@@ -61,7 +79,7 @@ h1 {
     width: 100%;
     opacity: 0;
     animation: fadeInUp 1.5s ease forwards;
-    animation-delay: 4s; /* Aparece após 4s */
+    animation-delay: 4s;
 }
 
 /* Texto "Estamos juntos há" */
@@ -74,7 +92,7 @@ h1 {
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
     opacity: 0;
     animation: fadeInUp 1.5s ease forwards;
-    animation-delay: 5s; /* Aparece após 5s */
+    animation-delay: 5s;
 }
 
 /* Animações */
@@ -88,4 +106,3 @@ h1 {
         transform: translateY(0);
     }
 }
-
