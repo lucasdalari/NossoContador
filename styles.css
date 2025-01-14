@@ -6,7 +6,7 @@ body {
     text-align: center;
     margin: 0;
     padding: 0;
-    overflow: hidden; /* Desativa a barra de rolagem do corpo */
+    overflow-x: hidden; /* Remove a rolagem horizontal */
 }
 
 /* Garantir rolagem do conteúdo */
@@ -32,6 +32,7 @@ html {
     align-items: center;
     width: 80%;
     margin: 20px auto;
+    box-sizing: border-box; /* Garante que o padding não ultrapasse a largura */
 }
 
 /* Título "Uma Mensagem Especial For You" */
@@ -138,153 +139,6 @@ h1 {
 @media (max-width: 768px) {
     body {
         font-size: 1.2rem; /* Ajuste de fonte */
-    }
-
-    .content-wrapper {
-        padding: 10px; /* Ajuste de layout */
-    }
-}
-/* Estilos Globais */
-body {
-    background: #000;
-    color: #fff;
-    font-family: 'Arial', sans-serif;
-    text-align: center;
-    margin: 0;
-    padding: 0;
-    overflow-x: hidden; /* Remove a rolagem horizontal */
-}
-
-/* Garantir rolagem do conteúdo */
-html {
-    overflow: scroll; /* Garante que a rolagem ainda esteja ativa */
-}
-
-/* Remover a barra de rolagem no Chrome, Safari e Edge */
-::-webkit-scrollbar {
-    display: none;
-}
-
-/* Contêiner Principal */
-.container {
-    padding: 50px;
-    margin-top: 20vh;
-    background: rgba(255, 255, 255, 0.5);
-    border-radius: 15px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 80%;
-    margin: 20px auto;
-    box-sizing: border-box; /* Garante que o padding não ultrapasse a largura */
-}
-
-/* Título "Uma Mensagem Especial For You" */
-h1 {
-    font-family: "Dancing Script", cursive;
-    font-weight: 700;
-    font-size: 4rem;
-    color: transparent;
-    background: linear-gradient(to top, #ff8a8a 100%, #ff1c1c 0%);
-    -webkit-background-clip: text;
-    background-clip: text;
-    text-shadow: 2px 2px 8px rgba(255, 150, 150, 0.4);
-    opacity: 0;
-    animation: fadeInUp 1.5s ease forwards 0s;
-}
-
-/* Texto Carinhoso */
-.carinhoso-texto {
-    font-size: 1.4rem;
-    color: #333;
-    line-height: 1.6;
-    opacity: 0;
-    animation: fadeInUp 1.5s ease forwards 2s;
-}
-
-/* Painel do Contador */
-#counter-panel {
-    background: rgba(255, 255, 255, 0.123);
-    border-radius: 20px;
-    padding: 30px 50px;
-    display: inline-block;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
-    margin-top: 20px;
-    max-width: 600px;
-    width: 100%;
-    opacity: 0;
-    animation: fadeInUp 1.5s ease forwards 4s;
-}
-
-/* Texto "Estamos juntos há" */
-#together-text, #counter, #days, #hours, #minutes, #seconds {
-    font-size: 2rem;
-    color: transparent;
-    background: linear-gradient(to top, #91daff 100%, #ff1c1c 0%);
-    -webkit-background-clip: text;
-    background-clip: text;
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
-    opacity: 0;
-    animation: fadeInUp 1.5s ease forwards 5s;
-}
-
-/* Animações */
-@keyframes fadeInUp {
-    0% {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* Contêiner para os corações */
-.falling-hearts {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-    overflow: hidden;
-}
-
-/* Corações individuais */
-.heart {
-    position: absolute;
-    font-size: 1.5rem; /* Tamanho base */
-    color: #ffffff9a;
-    animation: fall linear infinite, sway ease-in-out infinite;
-}
-
-/* Animação de queda */
-@keyframes fall {
-    0% {
-        top: -10%;
-    }
-    100% {
-        top: 110%;
-    }
-}
-
-/* Animação de balanço */
-@keyframes sway {
-    0%, 100% {
-        transform: translateX(0);
-    }
-    50% {
-        transform: translateX(30px);
-    }
-}
-
-/* Estilos para dispositivos móveis */
-@media (max-width: 768px) {
-    body {
-        font-size: 1.2rem; /* Ajuste de fonte */
         padding: 10px; /* Margens menores para evitar overflow */
     }
 
@@ -302,10 +156,11 @@ h1 {
     }
 
     #counter-panel {
-        padding: 20px;
+        padding: 15px 25px; /* Diminui o padding do painel */
+        max-width: 500px; /* Reduz o tamanho máximo do painel */
     }
 
     #together-text, #counter, #days, #hours, #minutes, #seconds {
-        font-size: 1.5rem; /* Ajuste dos textos dentro do painel */
+        font-size: 1.3rem; /* Ajuste dos textos dentro do painel */
     }
 }
