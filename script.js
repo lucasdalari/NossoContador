@@ -70,3 +70,12 @@ function manageHearts() {
 
 // Recria corações continuamente com limite de visibilidade
 setInterval(manageHearts, spawnInterval); // Controla a criação de corações
+
+function isMobile() {
+    return /Mobi|Android/i.test(navigator.userAgent);
+}
+
+if (isMobile()) {
+    // Carregar scripts ou alterar comportamentos específicos para dispositivos móveis
+    document.body.classList.add('mobile'); // Adiciona uma classe para estilos móveis específicos
+}
