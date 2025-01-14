@@ -1,5 +1,10 @@
 // Data do início do namoro
-const startDate = new Date('2024-09-11T19:43:00Z');
+const startDate = new Date('2024-09-11T20:43:00Z');
+
+// Função para pluralizar as palavras "ano", "dia", "hora", "minuto", "segundo"
+function pluralize(value, singular, plural) {
+    return value === 1 || value === 0 ? singular : plural;
+}
 
 // Função para atualizar o contador
 function updateCounter() {
@@ -10,17 +15,36 @@ function updateCounter() {
  
     const diff = nowInLondon - startDate;
  
-    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+    const years = Math.floor(diff / (1000 * 60 * 60 * 24 * 365)); // Cálculo do ano
+    const days = Math.floor(diff / (1000 * 60 * 60 * 24)) % 365; // Dias restantes após o ano completo
     const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
     const minutes = Math.floor((diff / (1000 * 60)) % 60);
     const seconds = Math.floor((diff / 1000) % 60);
- 
+
+    // Mostrar "ano" apenas após 1 ano completo
+    if (years > 0) {
+        document.getElementById('years').textContent = years;
+        document.getElementById('year-text').style.display = 'inline'; // Exibe o texto "ano"
+        document.getElementById('year-text').textContent = pluralize(years, 'ano', 'anos'); // Pluraliza o ano
+    } else {
+        document.getElementById('years').textContent = ''; // Oculta o valor do ano
+        document.getElementById('year-text').style.display = 'none'; // Oculta o texto "ano"
+    }
+
+    // Atualizando os textos no HTML com pluralização
     document.getElementById('days').textContent = days;
+    document.getElementById('days-text').textContent = pluralize(days, 'dia', 'dias');
+    
     document.getElementById('hours').textContent = hours;
+    document.getElementById('hours-text').textContent = pluralize(hours, 'hora', 'horas');
+    
     document.getElementById('minutes').textContent = minutes;
+    document.getElementById('minutes-text').textContent = pluralize(minutes, 'minuto', 'minutos');
+    
     document.getElementById('seconds').textContent = seconds;
+    document.getElementById('seconds-text').textContent = pluralize(seconds, 'segundo', 'segundos');
 }
- 
+
 // Atualiza o contador a cada segundo
 setInterval(updateCounter, 1000);
 
@@ -58,7 +82,7 @@ function createHeart() {
     // Remove o coração após a animação completa
     setTimeout(() => {
         heart.remove();
-    }, duration * 1000); // Remove após a animação (duração total)
+    }, duration * 2000); // Remove após a animação (duração total)
 }
 
 // Função para controlar o número de corações visíveis

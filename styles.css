@@ -111,7 +111,7 @@ h1 {
 .heart {
     position: absolute;
     font-size: 1.5rem; /* Tamanho base */
-    color: #ffffff9a; /* Cor do coração */
+    color: #ffffff62; /* Cor do coração */
     animation: fall linear infinite, sway ease-in-out infinite;
 }
 
@@ -143,8 +143,8 @@ h1 {
     }
 
     .container {
-        width: 90%; /* Ajuste de largura */
-        padding: 30px;
+        width: 100%; /* Ajuste de largura */
+        padding: 20px;
     }
 
     h1 {
@@ -152,15 +152,15 @@ h1 {
     }
 
     .carinhoso-texto {
-        font-size: 1.2rem; /* Ajuste do texto carinhoso */
+        font-size: 1.1rem; /* Ajuste do texto carinhoso */
     }
 
     #counter-panel {
         padding: 15px 25px; /* Diminui o padding do painel */
-        max-width: 500px; /* Reduz o tamanho máximo do painel */
+        max-width: 300px; /* Reduz o tamanho máximo do painel */
     }
 
     #together-text, #counter, #days, #hours, #minutes, #seconds {
-        font-size: 1.3rem; /* Ajuste dos textos dentro do painel */
+        font-size: 1.2rem; /* Ajuste dos textos dentro do painel */
     }
 }
