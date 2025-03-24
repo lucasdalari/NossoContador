@@ -5,8 +5,9 @@ body {
     font-family: 'Arial', sans-serif;
     text-align: center;
     margin: 0;
-    padding: 0;
     overflow-x: hidden; /* Remove a rolagem horizontal */
+    padding-bottom: 40px; /* Adiciona espaçamento no final da página */
+    padding-top: 0px; /* Adiciona espaçamento no começo da página */
 }
 
 /* Garantir rolagem do conteúdo */
@@ -14,7 +15,7 @@ html {
     overflow: scroll; /* Garante que a rolagem ainda esteja ativa */
 }
 
-/* Remover a barra de rolagem no Chrome, Safari e Edge */
+/* Remover a barra de rolagem dos Navegadores */
 ::-webkit-scrollbar {
     display: none; 
 }
@@ -72,9 +73,9 @@ h1 {
     animation: fadeInUp 1.5s ease forwards 4s; /* Aparece após 4s */
 }
 
-/* Texto "Estamos juntos há" */
+/* Texto "Estamos juntos há" e o Tempo */
 #together-text, #counter, #days, #hours, #minutes, #seconds {
-    font-size: 2rem;
+    font-size: 1.7rem;
     color: transparent;
     background: linear-gradient(to top, #91daff 100%, #ff1c1c 0%);
     -webkit-background-clip: text;
@@ -163,4 +164,48 @@ h1 {
     #together-text, #counter, #days, #hours, #minutes, #seconds {
         font-size: 1.2rem; /* Ajuste dos textos dentro do painel */
     }
+}
+
+/* Adicionando animação suave para os números */
+@keyframes numberAnimation {
+    0% {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Aplicando a animação nos números */
+#years, #days, #hours, #minutes, #seconds {
+    display: inline-block;
+}
+
+/* Estilos para a animação ao atualizar o número */
+.animate {
+    animation: numberAnimation 0.5s ease-out;
+}
+
+/* Animação de subida */
+@keyframes numberUp {
+    0% {
+        transform: translateY(10px); /* Começa levemente abaixo */
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0); /* Vai para a posição original */
+        opacity: 1;
+    }
+}
+
+/* Estilos para os números */
+#years, #days, #hours, #minutes, #seconds {
+    display: inline-block;
+}
+
+/* Classe de animação */
+.animate-up {
+    animation: numberUp 0.5s ease-out; /* Aplica a animação de subida */
 }
